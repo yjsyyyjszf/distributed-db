@@ -1,0 +1,53 @@
+<link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+<div class="user">
+  <span class="user__title">User</span>
+  <div class="user__main">
+    <div class="user__data">
+      <div class="user__input">
+      <textarea class="user__input-form"
+                [(ngModel)]="data"
+                placeholder="Your data"> </textarea>
+      </div>
+      <div class="user_postData">
+        <button class="user__button"
+                [disabled]="!data"
+                (click)="postData()"
+                [class._opacity]="!data"
+        >Submit Data
+        </button>
+      </div>
+    </div>
+    <div class="user__property">
+      <div class="user__condition">
+        <button class="user__buttonProperty"
+                [class._false]="propertyUser.writeRights"
+                [class._opacity]="!data"
+                [disabled]="!data"
+                (click)="writeData()"
+        >Write
+        </button>
+        <button class="user__buttonProperty"
+                [class._false]="propertyUser.readRights"
+                [class._opacity]="!data"
+                [disabled]="!data"
+                (click)="readData()"
+        >Read
+        </button>
+      </div>
+      <div class="user_postData">
+        <button class="user__button"
+                [class._opacity]="!data"
+                [disabled]="!data"
+                (click)="postProperty()">Submit Property
+        </button>
+      </div>
+    </div>
+    <div class="user__log">
+      <div class="user__info">
+        <div><span class="user__baseInfo">Your post data:</span> {{data}}</div>
+        <div><span class="user__baseInfo">Your post 'read' =</span> {{propertyUser.readRights}}</div>
+        <div><span class="user__baseInfo">Your post 'write' =</span> {{propertyUser.writeRights}}</div>
+      </div>
+    </div>
+  </div>
+</div>

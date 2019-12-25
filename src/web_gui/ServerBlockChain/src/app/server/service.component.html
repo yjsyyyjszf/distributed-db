@@ -1,0 +1,16 @@
+<link href="https://fonts.googleapis.com/css?family=Baskervville&display=swap" rel="stylesheet">
+<div class="service">
+  <span class="service__title">SERVICE</span>
+  <div class="service__getData">
+    <button class="service__button"
+            (click)="getData()"
+    >Get Data
+    </button>
+  </div>
+  <div class="service_userData">
+    <div *ngFor="let item of userDataArray"
+         class="service__item">
+      {{item}}
+    </div>
+  </div>
+</div>
